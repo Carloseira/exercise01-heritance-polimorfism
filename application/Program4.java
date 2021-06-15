@@ -7,7 +7,7 @@ import java.util.Scanner;
 import entities.Employee;
 import entities.OutsourcedEmployee;
 
-public class Program4 {
+public class Program {
 
 	public static void main(String[] args) {
 
@@ -29,7 +29,7 @@ public class Program4 {
 			int hours = input.nextInt();
 			System.out.print("Value per hour: ");
 			double valuePerHour = input.nextDouble();
-			if(answer == 'y') {
+			if (answer == 'y') {
 				System.out.print("Additional charge: ");
 				double additionalCharge = input.nextDouble();
 				list.add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
@@ -37,19 +37,12 @@ public class Program4 {
 			else { 
 				list.add(new Employee(name, hours, valuePerHour));
 			}	
-		}
-		
+		}	
 		System.out.println();
 		System.out.println("PAYMENTS: ");
 		for(Employee emp : list) {
 			System.out.println(emp.getName() + " - $" + String.format("%.2f", emp.payment()));
-		}
-		
-		
-		
-		
-		
+		}	
 		input.close();
 	}
-
 }
